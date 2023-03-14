@@ -1,0 +1,66 @@
+{
+  "name": "vite-plugin-template",
+  "version": "0.0.1",
+  "description": "a template for vite plugin",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "pnpm run build --watch",
+    "build": "tsup src/index.ts --dts --format cjs,esm",
+    "prettier": "prettier --write .",
+    "lint": "eslint src --ext .ts,.tsx,.vue,.js,.jsx",
+    "lint:fix": "npm run lint --fix",
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/parser": "^5.55.0",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "bumpp": "^9.0.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.4",
+    "prettier": "^2.8.4",
+    "tsup": "^6.6.3",
+    "typescript": "^4.9.5",
+    "vite": "^3.2.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zucoxy/vite-plugin-template.git"
+  },
+  "keywords": [
+    "vite",
+    "plugin"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "prettier --write",
+      "npm run lint"
+    ]
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": []
+    }
+  },
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7"
+  },
+  "author": "unyu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zucoxy/vite-plugin-template/issues"
+  },
+  "homepage": "https://github.com/zucoxy/vite-plugin-template#readme"
+}

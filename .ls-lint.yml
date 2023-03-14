@@ -1,0 +1,18 @@
+# .ls-lint.yml
+ls:
+  src:
+    .dir: kebab-case | regex:__[a-z0-9]+__
+    .scss: kebab-case
+    .vue: kebab-case | camelCase | PascalCase | regex:\[([a-z0-9_-]+)\]$
+    .js: kebab-case
+    .svg: kebab-case
+    .ts: kebab-case | camelCase
+    .d.ts: kebab-case
+
+ignore:
+  # xxxx-icons
+  - dist
+  - node_modules
+  - .husky
+  # others
+  - src/types
